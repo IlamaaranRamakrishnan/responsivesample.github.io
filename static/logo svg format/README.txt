@@ -1,0 +1,1 @@
+1) drag and drop the design in a blank figma design tab. Can edit from there. 

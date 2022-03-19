@@ -1,0 +1,1444 @@
+*{
+    margin: 0;
+    padding: 0;
+    background: #FAFAFA;   
+    
+}
+
+body{    
+    font-family:'Roboto', sans-serif;
+    height: auto;
+    overflow-x: hidden;
+      
+}
+
+/*For smooth scrollings*/
+html {
+    scroll-behavior: smooth;
+  }
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    position: sticky;  /*For sticky position*/
+    top: 0;
+    z-index: 999;
+   padding-left: 100px;
+   padding-right: 100px;
+   padding-top: 10px;
+
+}
+
+
+
+/*Adjust logo to fit into header*/
+.logo{
+    margin-top: -20px;
+   
+}
+.logo a{
+    color:#FF4500;
+    font-weight: normal;
+    font-size: 60px;
+    
+    
+    text-decoration: none;
+
+}
+
+/*Again split the ul into display grid*/
+
+.nav ul{
+    width: 100%;
+    display: flex;
+ 
+    
+}
+.nav ul li {
+    
+    font-size: 40px;
+    list-style: none;
+    padding: 10px;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color:#000000;
+    display: block;
+    transition: 100ms;
+    transition-timing-function: ease-in;
+    
+    
+}
+.nav ul li a img{
+    width: 235px;
+    height: 45px;
+    transition: 300ms;
+    transition-timing-function: ease-in;
+}
+
+.nav ul li a img:hover{
+    transform: translateY(-5px);
+    opacity: 0.6;
+}
+/*Adding colour for hover*/
+.nav ul li a:hover{
+    color:#FF4500;
+    text-decoration: underline;
+   
+}
+
+
+/*setting for hamburger menu*/
+.toggle{
+    position: absolute;
+    right: 80px;
+   
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+ .toggle .bar{
+     height:3px;
+     width:100%;
+     background-color: #000000;
+     border-radius: 10px;
+ }
+
+
+ /*edit hero image*/
+
+.hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    animation: sliding 0.7s ease-in-out;
+    
+    
+}    
+/*animations for nav bar*/
+@keyframes sliding {
+    0%{
+        transform: skewX(53deg) translateX(-500px);
+    }
+    60%{
+        transform: translateX(0px);
+    }
+    62%{
+        transform: skewX(0deg) translateX(30px);
+    }
+    70%{
+        transform: skew(-20deg);
+    }
+    80%{
+        transform: skew(0deg) translate(0);
+    }
+    90%{
+        transform: skew(-5deg);
+    }
+    100%{
+        transform: skewX(0deg);
+    }
+}
+
+
+/*services*/
+.section p{
+    
+    color: #FE5B1F;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+    
+    
+    padding-top: 90px; /*for sticky scroll compensation*/
+
+}
+
+ .service-list{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-column-gap: 40px;
+    margin-left: 30px;
+    margin-right: 30px; 
+
+    opacity: 0;        /*start for styling here*/
+    transform: translateY(20px); 
+    transition: 0.5s all ease-out; 
+ 
+ 
+}
+
+.transition-styling{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+    
+/*styling for services in a box*/
+/*ensure box sizing is fit and follow figma design*/
+
+
+/*later change blue to white*/
+.construction-consultants ,.renovation, .get-loan, .loan-comparison{
+    width:auto;
+    height: auto;
+    background: #FFFFFF;
+    border:1px solid #FE5B1F;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 5px;
+    margin-bottom: 100px;
+    
+}
+
+
+.image-construction img, .image-renovation img, .image-loan img, .image-loan-comparison img{
+    width:100%;
+    height:130px;
+    padding-bottom: 30px;
+} 
+
+.information-consultant p, .information-renovation p, .information-loan p, .information-loan-comparison p{
+    background: #FFFFFF;
+    padding-left: 10px;
+    
+}
+
+/*edit first child of the div*/
+.information-consultant p:first-child, .information-renovation p:first-child, .information-loan p:first-child, .information-loan-comparison p:first-child{
+    font-style: normal;
+    font-size: 30px;
+    color:#FF4500;
+    background: #FFFFFF;
+
+}
+
+
+.information-consultant hr, .information-renovation hr, .information-loan hr, .information-loan-comparison hr{
+    height: 2px;
+    background: #000000;
+    width: 80%;
+}
+
+
+
+/*edit line height to make all matching*/
+
+.information-renovation p:first-child, .information-loan p:first-child{
+    padding-bottom: 35px;
+}
+
+.information-consultant p:nth-child(3), .information-renovation p:nth-child(3), .information-loan p:nth-child(3), .information-loan-comparison p:nth-child(3){
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 25px;
+    
+    color:#000000;
+    font-size: 24px;
+}
+/*edit anchor tag for color spacing and sizing*/
+.construction-consultants a , .renovation a , .get-loan a , .loan-comparison a {
+    color: #FF4500;
+    font-size: 24px;
+    border: 1px solid #FF4500;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding:10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 45px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;  
+  
+}
+
+
+
+.construction-consultants a:hover, .renovation a:hover , .get-loan a:hover , .loan-comparison a:hover{
+    color: #FFFFFF;
+    background: #FF4500;
+
+}
+
+
+/*about us section*/
+
+.about-us{
+    opacity: 0;        /*start for styling here*/
+    transform: translateX(-100px); 
+    transition: 0.5s all ease-out; 
+}
+
+.transition-about{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.about-us > p{
+    background: #FFFFFF;
+    color: #FF4500;
+    text-align: center;
+    font-size: 50px;
+   margin-top: 40px;
+   padding-top: 10px;
+      
+}
+
+.about-us{
+    background: #FFFFFF;
+    height: 365px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-bottom: 90px;
+    margin-top: 90px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+
+    
+}
+.about1, .about2 , .about3{
+    background: #FFFFFF;
+    
+    padding:10px;
+    padding-left: 20px;
+}
+
+.about1 p,.about2 p, .about3 p {
+    background: #FFFFFF;
+    font-size: 24px;
+    color: #000000;
+    font-style: normal;
+}
+
+.about1 p img, .about2 p img, .about3 p img{
+    background: #FFFFFF; 
+    margin-right: 5px;
+    width:20px;
+    height:20px;
+    float: left;
+}
+
+.start-button{
+    background: #FFFFFF;
+    text-align: center;
+    padding-top:30px;
+      
+}
+.start-button a{
+    color: #FFFFFF;
+    font-size: 24px;
+    text-decoration: none;
+    background: #FF4500;
+    
+    border-radius: 10px;
+    padding:10px;
+    display: inline-block;
+    margin-bottom: 10px;
+
+}
+
+
+
+.start-button a:hover{
+    background: #FF4500;;
+    opacity: 0.6;
+}
+
+/*enquiry section split into grid area*/
+
+.text{
+    grid-area: section;
+}
+
+.happy-image{
+    grid-area: article;
+}
+
+.contact{
+    grid-area:aside;
+    background: #FFFFFF;
+    
+}
+/*enquiry section make it into 2 section grid*/
+.contact-form{
+    display: grid;
+    grid-template-columns:  auto auto;
+    
+    grid-template-rows: auto;
+    grid-template-areas: 
+                    " section aside"
+                    " article aside";
+    
+    grid-column-gap: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top:120px;   /*added 70px for sticky nav*/
+    padding-bottom:50px;
+    background: #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+/*animation for forms text*/
+.text{
+    opacity: 0;        /*start for styling here*/
+    transform: translateX(-100px); 
+    transition: 0.5s all ease-out; 
+  
+}
+
+.transition-text{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+
+.text p:first-child, .text p:nth-child(2) {
+    font-size: 50px;
+    background: #FFFFFF;
+    color: #FF4500;
+}
+
+.text p:nth-child(3) {
+    padding-top: 20px;
+    font-size: 24px;
+    color: #000000;
+    background: #FFFFFF;
+    
+}
+.happy-image{
+    background: #FFFFFF;
+    padding-top:95px;
+}
+
+.happy-image img{
+    background: #FFFFFF;
+   
+}
+/*animation for forms input*/
+.contact{
+    opacity: 0;        /*start for styling here*/
+    transform: translateX(100px); 
+    transition: 0.5s all ease-out; 
+  
+}
+
+.transition-contact{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.name input, .email input, .contact-number input{
+    width: 300px;
+    padding: 15px;
+   margin:15px;
+   border: 1px solid #FF4500;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   background: #FFFFFF;
+}
+
+.message textarea{
+    padding: 15px;
+    margin:15px;
+    width: 300px;
+    height: 150px;
+    border: 1px solid #FF4500;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: #FFFFFF;
+
+}
+
+.button-submit input{
+    width: 180px;
+    height: 60px;
+    margin-left: 100px;
+    background: #FF4500;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.button-submit input:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+.name, .email, .contact-number, .message , .button-submit{
+    background: #FFFFFF;
+}
+/*edit footer using grid*/
+.footer{
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right:120px;
+    padding-left: 120px;
+    height: 240px;
+    background: #000000; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main-text p{
+    text-align: center;
+    font-size: 30px;
+    color: #FFFFFF;
+    padding: 5px;
+    background: #000000; 
+}
+
+.sub-text p{
+    text-align: center;
+    font-size: 24px;
+    color: #FFFFFF;
+    padding: 5px;
+    background: #000000; 
+}
+/*edit form start*/
+
+
+.form-letter{
+    background: #000000;   
+    display: flex;
+    justify-content: center;
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.email2{
+    background: #000000;
+    border:none;
+
+}
+
+.email2 input{
+    background: #FFFFFF;
+    width: 400px;
+    height: 31px;
+    border: 1px solid;
+    padding: 10px;
+    
+    border-right: none;
+    border-radius: 10px;
+    font-size: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right-style: none;
+}
+
+.email2 ::placeholder{
+    font-size: 20px;
+}
+
+.button-submit2{
+
+    background: #000000;
+}
+
+.button-submit2 input{
+    position: relative;
+    margin-top: 5px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 5px;
+    
+    bottom: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+}
+
+.button-submit2 input:hover{
+    opacity: 0.8;
+   
+}
+
+/*edit form finish*/
+
+/*start edit social media*/
+.social-media ul{
+    justify-content: center;
+    display: flex;
+    background: #000000;
+}
+
+
+.fa-instagram, .fa-facebook, .fa-skype, .fa-linkedin{
+    padding:10px;
+    font-size: 30px;
+    color: #FFFFFF;
+    background: #000000;
+
+}
+
+.social-media ul li{
+    list-style: none;
+    background: #000000;
+}
+
+.social-media ul li a:hover{
+    opacity: 0.6;
+
+}
+/*start edit social media*/
+
+
+/*copyright tab*/
+
+.copyright{
+    display: flex;
+    justify-content: center;
+    background: #000000;
+}
+
+.fa-copyright{
+    padding-top: 5px;
+    font-size: 15px;
+    color: #FFFFFF;
+    background: #000000;
+}
+
+.copyright p{
+    color: #FFFFFF;
+    font-size: 20px;
+    padding-left: 5px;
+    background: #000000;
+}
+
+
+/*terms and condition tab*/
+.terms-condition ul{
+    display: flex;
+    justify-content: center;
+    background:#000000;
+    
+
+}
+
+.terms-condition ul hr{
+    margin-top: 20px;
+    width: 2%;
+    height: 2px;
+    color: #FFFFFF;
+  
+    
+}
+
+
+.terms-condition ul li{
+
+font-size: 20px;
+padding: 10px;
+background:#000000;
+list-style: none;
+
+}
+
+.terms-condition ul li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    background:#000000;
+}
+
+.terms-condition ul li a:hover{
+   opacity: 0.6;
+}
+
+
+
+@media screen and (min-width:1025px) and (max-width:1290px) 
+{ 
+    
+    
+  
+   
+    .logo a{
+    
+        font-size: 50px;
+    }
+    
+    /*reducing font size to ensure all text fit in overflow hidden*/
+    
+    .nav ul li {
+        
+        font-size: 35px;
+ 
+    }
+    
+/*about us */
+    .about-us > p{
+
+        font-size: 40px;     
+    }
+    
+   
+    
+    /*service */
+    .service-list{
+
+        grid-column-gap: 20px;
+        margin-left: 20px;
+        margin-right: 20px;  
+    }
+ 
+    
+    /*edit first child of the div*/
+    .information-consultant p:first-child, .information-renovation p:first-child, .information-loan p:first-child, .information-loan-comparison p:first-child{
+    font-size: 26px;
+        }
+
+    .construction-consultants a, .renovation a , .get-loan a , .loan-comparison a{
+    font-size: 22px;
+    position: relative;
+    padding:5px;
+    }
+
+
+    /*for forms section*/
+    .text p:first-child, .text p:nth-child(2) {
+        font-size: 45px;
+ 
+    }  
+
+}
+
+@media all and (min-width:769px) and (max-width:1024px){
+
+    *{
+        background-color: pink;
+        
+    }
+
+    
+
+    /*for navigation section*/
+    .toggle{
+        display: flex;
+        cursor: pointer;
+    }
+
+    .nav {
+       display: none;
+       width: 100%;
+       
+       
+      
+    }
+
+    .header{
+        flex-direction: column;
+        align-items: flex-start;
+        
+        
+    }
+
+
+    .nav ul{
+        width: 100%;
+        flex-direction: column;
+        
+    }
+
+    .nav ul li{
+        
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        
+        
+    }
+
+    .nav ul li:last-child{
+        margin-bottom: 10px;
+    }
+
+   
+
+    .nav ul li a:hover{
+       
+        text-decoration: underline;
+    
+        
+        
+    }
+    
+    .nav ul li a img:hover{
+        transform: translateY(0px);
+        opacity: 0.6;
+    }
+    
+
+    /*for javascript*/
+    .nav.active{
+        display: flex;
+           
+    }
+
+    /*navigation section end*/
+
+    /*about us */
+    
+    .about-us > p{
+
+        font-size: 35px;     
+    }
+   
+    
+    .start-button{
+
+        padding-top:30px;
+          
+    }
+    .start-button a{
+        font-size: 20px;
+    
+    }
+
+    .about1 p,.about2 p, .about3 p {
+        font-size: 22px;
+        
+   
+    }
+        /*about us end*/
+
+        /*service list start*/
+    .information-consultant p:first-child, .information-renovation p:first-child, .information-loan p:first-child, .information-loan-comparison p:first-child{
+        font-size: 24px;
+
+    }
+
+    .information-consultant p:nth-child(3), .information-renovation p:nth-child(3), .information-loan p:nth-child(3), .information-loan-comparison p:nth-child(3){
+
+        font-size: 20px;
+    }
+     
+    
+    .construction-consultants a, .renovation a , .get-loan a , .loan-comparison a{
+    font-size: 18px;
+    position: relative;
+    padding:5px;
+    margin-left: 20px;
+    }   
+
+    /*service list end*/
+
+
+    /*enquiry form start*/
+
+    /*for forms section*/
+    .text p:first-child, .text p:nth-child(2) {
+        font-size: 35px;
+ 
+    } 
+
+
+    .contact-form{
+        
+        grid-column-gap: 5px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-top:120px;   /*added 70px for sticky nav*/
+        padding-bottom:50px;
+   
+    }
+
+
+    .name input, .email input, .contact-number input{
+    width: 200px;
+    padding: 15px;
+    margin:15px;
+
+    }
+
+    .message textarea{
+    padding: 15px;
+    margin:15px;
+    width: 200px;
+    height: 150px;
+
+    }
+
+.button-submit input{
+    width: 100px;
+    height: 50px;
+    margin-left: 80px;
+    font-size: 20px;
+}
+    /*forms section end*/
+
+ /*footer start*/  
+  /*footer text*/  
+    .main-text p{
+    font-size: 22px; 
+    }
+
+    .sub-text p{
+    font-size: 20px;
+
+    }
+    .form-letter{
+        background: #000000;   
+        display: flex;
+        justify-content: center;
+        
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    /*footer end*/  
+
+     
+ 
+}
+
+
+@media all and (min-width:481px) and (max-width:768px){
+  
+
+    /*for navigation section*/
+    .toggle{
+
+        display: flex;
+        cursor: pointer;
+    }
+
+    .nav {
+
+       display: none;
+       width: 100%;
+         
+    }
+
+    .header{
+
+        flex-direction: column;
+        align-items: flex-start;
+            
+    }
+
+
+    .nav ul{
+        width: 100%;
+        flex-direction: column;
+        
+    }
+
+    .nav ul li{
+        
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+            
+    }
+
+    .nav ul li:last-child{
+        margin-bottom: 10px;
+    }
+
+   
+
+    .nav ul li a:hover{
+       
+        text-decoration: underline;    
+    }
+    
+    .nav ul li a img:hover{
+        transform: translateY(0px);
+        opacity: 0.6;
+    }
+    
+
+    /*for javascript*/
+    .nav.active{
+        display: flex;       
+    }
+
+
+    /*navigation section start*/
+
+    .logo a{
+    
+        font-size: 40px;
+    }
+    
+    /*reducing font size to ensure all text fit in overflow hidden*/
+    
+    .nav ul li {
+        
+        font-size: 30px;
+ 
+    }
+
+    /*navigation section end*/
+
+/*about us */
+    
+.about-us > p{
+
+    font-size: 20px;     
+}
+
+
+.start-button{
+
+    padding-top:30px;
+      
+}
+.start-button a{
+    font-size: 20px;
+
+}
+
+.about1 p,.about2 p, .about3 p {
+    font-size: 18px;
+    
+
+}
+    /*about us end*/
+
+    /*service start*/
+
+    .section p{
+    
+        font-size: 30px;
+    }
+
+    .information-consultant p:first-child, .information-renovation p:first-child, .information-loan p:first-child, .information-loan-comparison p:first-child{
+        font-size: 22px;
+
+    }
+
+    .information-consultant p:nth-child(3), .information-renovation p:nth-child(3), .information-loan p:nth-child(3), .information-loan-comparison p:nth-child(3){
+
+        font-size: 20px;
+    }
+     
+    
+    .construction-consultants a, .renovation a , .get-loan a , .loan-comparison a{
+    font-size: 20px;
+    position: relative;
+    padding:5px;
+    margin-left: 18px;
+    margin-right: 10px;
+    }
+
+    .service-list{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(2, auto);        
+        grid-column-gap: 30px;
+        margin-left: 30px;
+        margin-right: 30px; 
+     
+     
+    }
+
+    
+    /*height and width of the container*/
+    .construction-consultants ,.renovation, .get-loan, .loan-comparison{
+        width:200px;
+        height: 515px;
+   
+        
+    }
+
+            /*service end*/
+
+    /*enquiry section make it into 2 section grid*/
+.contact-form{
+    display: grid;
+    grid-template-columns:auto;
+    
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+                    " section"
+                    " article "
+                      "aside" ;
+    grid-column-gap: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top:120px;   /*added 70px for sticky nav*/
+    padding-bottom:50px;
+    background: #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/*enquiry form end*/
+
+/*footer start*/
+
+
+/*edit footer using grid*/
+.footer{
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right:20px;
+    padding-left: 20px;
+    height: 240px;
+ 
+}
+
+.main-text p{
+    
+    font-size: 24px;
+
+}
+
+.sub-text p{
+   
+    font-size: 20px;
+  
+}
+/*edit form start*/
+
+.copyright p{
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+
+/*terms and condition tab*/
+
+.terms-condition ul li{
+
+    font-size: 20px;
+
+}
+
+.terms-condition ul hr{
+    margin-top: 20px;
+    width: 2%;
+    height: 2px;
+    color: #FFFFFF;
+  
+    
+}
+
+/*footer end*/
+
+
+    
+
+
+}
+
+@media all and (min-width:320px) and (max-width:480px){
+    
+    *{
+       background:pink ; 
+        
+    }
+
+    /*for navigation section*/
+     /*for navigation section*/
+     .toggle{
+
+        display: flex;
+        cursor: pointer;
+    }
+
+    .nav {
+
+       display: none;
+       width: 100%;
+         
+    }
+
+    .header{
+
+        flex-direction: column;
+        align-items: flex-start;
+            
+    }
+
+
+    .nav ul{
+        width: 100%;
+        flex-direction: column;
+        
+    }
+
+    .nav ul li{
+        
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+            
+    }
+
+    .nav ul li:last-child{
+        margin-bottom: 10px;
+    }
+
+   
+
+    .nav ul li a:hover{
+       
+        text-decoration: underline;    
+    }
+    
+    .nav ul li a img:hover{
+        transform: translateY(0px);
+        opacity: 0.6;
+    }
+    
+
+    /*for javascript*/
+    .nav.active{
+        display: flex;       
+    }
+
+
+    /*navigation section start*/
+
+    .logo a{
+    
+        font-size: 40px;
+    }
+    
+    /*reducing font size to ensure all text fit in overflow hidden*/
+    
+    .nav ul li {
+        
+        font-size: 30px;
+ 
+    }
+
+    /*navigation section end*/
+
+/*about us */
+    
+    .about-us > p{
+
+    font-size: 20px;     
+}
+
+
+    .start-button{
+
+    padding-top:30px;
+      
+}
+    .start-button a{
+    font-size: 18px;
+
+}
+
+    .about1 p,.about2 p, .about3 p {
+    font-size: 18px;
+    
+
+}
+    /*about us end*/
+
+    /*service start*/
+
+    .section p{
+    
+        font-size: 30px;
+    }
+
+    .information-consultant p:first-child, .information-renovation p:first-child, .information-loan p:first-child, .information-loan-comparison p:first-child{
+        font-size: 22px;
+
+    }
+
+    .information-consultant p:nth-child(3), .information-renovation p:nth-child(3), .information-loan p:nth-child(3), .information-loan-comparison p:nth-child(3){
+
+        font-size: 18px;
+    }
+     
+    
+    .construction-consultants a, .renovation a , .get-loan a , .loan-comparison a{
+    font-size: 18px;
+    position: relative;
+    padding:5px;
+    margin-left: 18px;
+    margin-right: 10px;
+    }
+
+    .service-list{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(4, auto);        
+        grid-column-gap: 30px;
+        margin-left: 65px;
+        margin-right: 30px; 
+     
+     
+    }
+
+    
+    /*height and width of the container*/
+    .construction-consultants ,.renovation, .get-loan, .loan-comparison{
+        width:200px;
+        height: 515px;
+   
+        
+    }
+
+            /*service end*/
+
+
+/*enquiry section make it into 2 section grid*/
+/*enquiry form start*/
+.contact-form{
+    display: grid;
+    grid-template-columns:auto;
+    
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+                    " section"
+                    " article "
+                      "aside" ;
+    grid-column-gap: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top:120px;   /*added 70px for sticky nav*/
+    padding-bottom:50px;
+  
+}
+
+
+
+
+    .happy-image{
+    display: none;
+}
+
+    .text p:first-child, .text p:nth-child(2) {
+    font-size: 20px;
+    
+    text-align: center;
+    
+  
+}
+
+.text p:nth-child(3) {
+
+    font-size: 20px;
+    text-align: center;
+
+    
+}
+
+    .name input, .email input, .contact-number input{
+    width: 150px;
+    padding: 15px;
+    margin:15px;
+    margin-left: 60px;
+
+    }
+
+    .message textarea{
+    padding: 15px;
+    margin:15px;
+    width: 150px;
+    height: 150px;
+    margin-left: 60px;
+
+    }
+
+    .button-submit input{
+        width: 120px;
+        height: 50px;
+        margin-left: 90px;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+
+
+
+/*enquiry form end*/
+/*footer start*/
+
+
+/*edit footer using grid*/
+.footer{
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right:20px;
+    padding-left: 20px;
+    height: 400px;
+ 
+}
+
+.main-text p{
+    
+    font-size: 24px;
+
+}
+
+.sub-text p{
+   
+    font-size: 20px;
+  
+}
+/*edit form start*/
+
+.copyright p{
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.email2 input{
+
+    width: 200px;
+}
+
+
+
+
+/*terms and condition tab*/
+
+
+
+.terms-condition ul li{
+
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.terms-condition ul hr{
+    margin-top: 20px;
+    width: 5%;
+    height: 2px;
+    color: #FFFFFF;
+  
+    
+}
+
+i.far.fa-copyright{
+    display: none;
+}
+
+
+/*footer end*/
+
+
+    
+
+
+     
+    
+
+
+  
+
+}
